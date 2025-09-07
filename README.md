@@ -6,7 +6,7 @@ WHETHER
 - เพื่อสร้างโครงสร้างโปรเจคในรูปแบบ “ค่าเฉลี่ย” พร้อมรายการระบบ (System) และฟีเจอร์ (Feature) ที่แสดงผลได้ชัดเจน
 - เพื่อสร้างโครงสร้างโปรเจคในรูปแบบ “ค่าเฉลี่ย” พร้อมรายการระบบ (System) และฟีเจอร์ (Feature) ที่แสดงผลได้ชัดเจน สามารถออกแบบโครงสร้างและโฟลเดอร์ดังนี้ (ตัวอย่างโครงการเว็บแอปคำนวณค่าเฉลี่ย):
 
-- project-average-calculator/
+** project-average-calculator/
 │
 ├── README.md
 - # อธิบายโครงการและวิธีการใช้งาน
@@ -101,7 +101,7 @@ WHETHER
 
 ## โค้ดแต่ละไฟล์
 
-<> src/systems/calculation.js
+src/systems/calculation.js
 v1
 export function calculateAverage(numbers) {
   if (!Array.isArray(numbers) || numbers.length === 0) return 0;
@@ -110,28 +110,28 @@ export function calculateAverage(numbers) {
 }
 
 
-<> src/systems/validation.js
+src/systems/validation.js
 v1
 export function isValidNumber(value) {
   return typeof value === "number" && !isNaN(value);
 }
 
 
-<> src/features/addItem.js
+src/features/addItem.js
 v1
 export function addItem(list, item) {
   return [...list, item];
 }
 
 
-<> src/features/removeItem.js
+src/features/removeItem.js
 v1
 export function removeItem(list, index) {
   return list.filter((_, i) => i !== index);
 }
 
 
-<>src/components/AverageTable.jsx
+src/components/AverageTable.jsx
 v1
 import React from "react";
 export default function AverageTable({ numbers, average }) {
@@ -140,7 +140,7 @@ export default function AverageTable({ numbers, average }) {
       <thead>
         <tr>
 
-<> src/components/InputForm.jsx
+src/components/InputForm.jsx
 v1
 import React, { useState } from "react";
 export default function InputForm({ onAdd }) {
@@ -149,7 +149,7 @@ export default function InputForm({ onAdd }) {
     <form
       onSubmit={e => {
 
-<> src/components/FeatureList.jsx
+src/components/FeatureList.jsx
 v1
 import React from "react";
 export default function FeatureList() {
@@ -171,7 +171,7 @@ package.json
   "main": "src/index.js",
   "scripts": {
 
-<> src/systems/calculation.js
+src/systems/calculation.js
 v2
 export function calculateAverage(numbers) {
   if (!Array.isArray(numbers) || numbers.length === 0) return 0;
@@ -180,34 +180,34 @@ export function calculateAverage(numbers) {
 }
 
 
-<> src/systems/validation.js
+src/systems/validation.js
 v2
 export function isValidNumber(value) {
   return typeof value === "number" && !isNaN(value);
 }
 
 
-<> src/features/addItem.js
+src/features/addItem.js
 v2
 export function addItem(list, item) {
   return [...list, item];
 }
 
 
-<> src/features/removeItem.js
+src/features/removeItem.js
 v2
 export function removeItem(list, index) {
   return list.filter((_, i) => i !== index);
 }
 
 
-<> src/features/editItem.js
+src/features/editItem.js
 export function editItem(list, index, newValue) {
   return list.map((item, i) => (i === index ? newValue : item));
 }
 
 
-<> src/features/exportResult.js
+src/features/exportResult.js
 // ส่งออกผลลัพธ์เป็นไฟล์ CSV
 export function exportResult(numbers, average) {
   const header = "ลำดับ,ค่า\n";
@@ -224,7 +224,7 @@ export default function AverageTable({ numbers, average, onEdit, onRemove }) {
       <thead>
         <tr>
 
-<> src/components/InputForm.jsx
+src/components/InputForm.jsx
 v2
 import React, { useState } from "react";
 export default function InputForm({ onAdd }) {
@@ -233,7 +233,7 @@ export default function InputForm({ onAdd }) {
     <form
       onSubmit={e => {
 
-<> src/components/FeatureList.jsx
+src/components/FeatureList.jsx
 v2
 import React from "react";
 export default function FeatureList() {
@@ -241,7 +241,7 @@ export default function FeatureList() {
     <ul>
       <li>เพิ่มข้อมูล</li>
       <li>ลบข้อมูล</li>
-//
+
 src/App.jsx
 v1
 import React, { useState } from "react";
